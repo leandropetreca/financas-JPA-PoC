@@ -1,4 +1,4 @@
-package com.petreca.financas;
+package com.petreca.financas.testes;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

@@ -1,10 +1,11 @@
-package com.petreca.financas;
+package com.petreca.financas.testes;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 
+import com.petreca.financas.Dao.MovimentacaoDao;
 import com.petreca.financas.model.Conta;
 import com.petreca.financas.model.Movimentacao;
 import com.petreca.financas.model.TipoMovimentacao;
@@ -27,15 +28,19 @@ public class TesteJPARelacionamento {
 		movimentacao.setValor(new BigDecimal("200.0"));
 		
 		movimentacao.setConta(conta);
+		
+		
 			
-		EntityManager manager = new JPAUtil().getEntityManager();
-		manager.getTransaction().begin();
+		EntityManager em = new JPAUtil().getEntityManager();
+		MovimentacaoDao movDao = new MovimentacaoDao(em);
 		
-		manager.persist(conta);
-		manager.persist(movimentacao);
 		
-		manager.getTransaction().commit();
-		manager.clear();
+		em.getTransaction().begin();
+		
+		movDao.addMovimentacao(movimentacao, conta);
+		
+		em.getTransaction().commit();
+		em.clear();
 		
 				
 	}

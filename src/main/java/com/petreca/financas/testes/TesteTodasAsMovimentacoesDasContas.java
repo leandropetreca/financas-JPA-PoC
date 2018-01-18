@@ -1,4 +1,4 @@
-package com.petreca.financas;
+package com.petreca.financas.testes;
 
 import java.util.List;
 

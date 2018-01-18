@@ -29,6 +29,22 @@ public class Conta {
 	private List<Movimentacao> movimentacoes;
 	
 	
+	
+	
+	public Conta(String titular, String banco, String agencia, String numero, Cliente cliente) {
+		
+		this.titular = titular;
+		this.banco = banco;
+		this.agencia = agencia;
+		this.numero = numero;
+		this.cliente = cliente;
+	}
+	
+	
+	public Conta() {
+		
+	}
+	
 	public Cliente getCliente() {
 		return cliente;
 	}

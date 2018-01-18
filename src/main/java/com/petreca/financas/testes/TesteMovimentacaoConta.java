@@ -1,4 +1,4 @@
-package com.petreca.financas;
+package com.petreca.financas.testes;
 
 import javax.persistence.EntityManager;
 

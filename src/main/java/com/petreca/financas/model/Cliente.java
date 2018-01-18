@@ -22,6 +22,19 @@ public class Cliente {
 	private String profissao;
 	
 	
+	
+	public Cliente() {
+		
+	}
+	
+	
+	public Cliente(String nome,  String endereco, String profissao) {
+		
+		this.nome = nome;
+		this.endereco = endereco;
+		this.profissao = profissao;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
