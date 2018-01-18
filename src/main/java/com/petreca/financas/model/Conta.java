@@ -1,10 +1,13 @@
 package com.petreca.financas.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -21,6 +24,9 @@ public class Conta {
 	@OneToOne
 	@JoinColumn(unique=true)
 	private Cliente cliente;
+	
+	@OneToMany(mappedBy="conta")
+	private List<Movimentacao> movimentacoes;
 	
 	
 	public Cliente getCliente() {
@@ -61,6 +67,8 @@ public class Conta {
 	}
 
 
-	
+	public List<Movimentacao> getMovimentacoes() {	   
+	    return movimentacoes;
+	}
 
 }

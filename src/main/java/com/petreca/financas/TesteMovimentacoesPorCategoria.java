@@ -20,6 +20,8 @@ public class TesteMovimentacoesPorCategoria {
 		Categoria categoria = new Categoria();
 		categoria.setId(3);
 		
+		
+		// para relacionamentos manytomany usamos o join
 		String jpql = "select m from Movimentacao m join m.categorias c where c = :pCategoria";
 		
 		Query query = em.createQuery(jpql);
